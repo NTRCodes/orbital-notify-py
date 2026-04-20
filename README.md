@@ -1,12 +1,12 @@
 # orbital-notify-py
 
-Go service for tracking ISS flyovers and sending pass notifications.
+Python service for tracking ISS flyovers and sending pass notifications.
 
 ## Overview
 
 `orbital-notify` is a backend-focused project that tracks upcoming International Space Station (ISS) passes for a location and sends notifications before a visible flyover.
 
-The goal of this project is to demonstrate practical backend engineering in Go through:
+The goal of this project is to demonstrate practical backend engineering in Python through:
 
 - third-party API integration
 - scheduled/background job processing
