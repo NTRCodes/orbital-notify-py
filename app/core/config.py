@@ -1,4 +1,8 @@
-from pydantic.v1 import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+def get_settings() -> Settings:
+    return Settings()
 
 
 class Settings(BaseSettings):
@@ -6,10 +10,8 @@ class Settings(BaseSettings):
     debug: bool = False
     database_url: str = "sqlite:///database.db"
 
-    class Config:
-        env_file = ".env"   # Load from .env file if present
-        env_file_encoding = "utf-8"
-        case_sensitive = True
-
-def get_settings() -> Settings:
-    return Settings()
+    settings_config: SettingsConfigDict = SettingsConfigDict(
+        env_file=".env",
+        case_sensitive=True,
+        validate_default=False,
+    )

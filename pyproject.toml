@@ -1,2 +1,2 @@
-[tool.fastpi]
+[tool.fastapi]
 entrypoint = "app.main:app"
