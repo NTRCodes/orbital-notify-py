@@ -1,4 +1,4 @@
-import logging.config
+from logging import config
 
 LOGGING_CONFIG = {
     "version": 1,
@@ -50,4 +50,4 @@ LOGGING_CONFIG = {
 
 def setup_logging(log_level: str):
     LOGGING_CONFIG["loggers"]["app"]["level"] = log_level.upper()
-    logging.config.dictConfig(LOGGING_CONFIG)
+    config.dictConfig(LOGGING_CONFIG)
