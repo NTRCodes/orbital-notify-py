@@ -1,9 +1,8 @@
-import logging
 import time
-
+from logging import Logger, getLogger
 from fastapi import Request
 
-logger = logging.getLogger("app")
+logger = getLogger("app")
 
 
 async def log_requests(request: Request, call_next):

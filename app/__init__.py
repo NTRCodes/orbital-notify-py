@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 
-from .core.logging import setup_logging
+from .core.logging_config import setup_logging
 from .core.config import get_settings
 from .api import api_router
-from app.api.middleware.logging import log_requests
+from app.api.middleware.request_logging import log_requests
 
 
 def create_app() -> FastAPI:
