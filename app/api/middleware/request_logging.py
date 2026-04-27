@@ -1,5 +1,5 @@
 import time
-from logging import Logger, getLogger
+from logging import getLogger
 from fastapi import Request
 
 logger = getLogger("app")
