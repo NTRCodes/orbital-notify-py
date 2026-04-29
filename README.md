@@ -1,66 +1,40 @@
 # orbital-notify-py
 
-Orbital Notify is an event-driven data pipeline that ingests ISS pass data from external APIs, validates and stores orbital events, processes visibility windows, and triggers scheduled notifications with reliability and observability built in.
+Orbital Notify is a backend systems project evolving into an event-driven data pipeline for ingesting, processing, and notifying on ISS pass events, with reliability and observability built into the design.
 
 ## Overview
 
-`orbital-notify` is a backend-focused project that tracks upcoming International Space Station (ISS) passes for a location and sends notifications before a visible flyover.
+This project is designed as practical proof of backend and platform engineering skills, emphasizing:
 
-The goal of this project is to demonstrate practical backend engineering in Python through:
+- API integration
+- data ingestion and processing
+- background job execution
+- reliability patterns
+- observability
+- deployable service architecture
 
-- third-party API integration
-- scheduled/background job processing
-- notification workflows
-- persistence
-- Docker-based local development
-- clean project structure and documentation
+The focus is not just building a feature, but building a system.
 
-## Why I built this
+## Current Capabilities
 
-I wanted a project that feels like a real service rather than a toy app.
+Implemented:
 
-This system is meant to showcase the kind of backend work I enjoy:
-- integrating with external APIs
-- building reliable services
-- modeling domain workflows
-- creating software that can be run, tested, and extended
+- FastAPI service with modular routing
+- Environment-based configuration
+- Application lifecycle hooks
+- Request logging and observability foundation
+- Production-style application structure
 
-## Planned Features
+In Progress:
 
-### v0
-- [ ] project scaffold
-- [ ] basic API srv
-- [ ] health check endpoint
+- External event ingestion
+- Scheduled processing jobs
+- Persistence layer
+- Metrics and reliability enhancements
 
-### v1
-- [ ] register a location to monitor
-- [ ] fetch upcoming ISS passes from an external API
-- [ ] store subscriptions in a database
-- [ ] list upcoming passes for a location
-- [ ] schedule notifications before a pass
-- [ ] send notifications through a pluggable notifier interface
+## Target Architecture
 
-### v2
-- [ ] retry logic for failed notifications
-- [ ] structured logging
-- [ ] configuration via environment variables
-- [ ] integration tests for key workflows
-- [ ] Docker Compose for local startup
-
-### v3
-- [ ] metrics endpoint
-- [ ] deployable demo environment
-- [ ] optional CLI for local testing and admin workflows
-
-## Tech Stack
-
-- Python
-- SQLite or Postgres
-- Docker / Docker Compose
-- External ISS pass API
-
-Data Flow
-
+```text
 External ISS API
 → Ingestion Service
 → Validation / Normalization
@@ -68,14 +42,45 @@ External ISS API
 → Pass Detection / Scheduling
 → Notification Dispatch
 → Metrics / Logs / Health Checks
+```
 
-## Future Ideas
+## Roadmap
 
-- support multiple notification channels
-- support timezone-aware alerts
-- compare visible vs non-visible passes
-- expose a small CLI for testing subscriptions
-- add deployment manifests
+### Foundation (Complete)
+- [x] Service scaffold
+- [x] Health endpoints
+- [x] Config management
+- [x] Lifecycle management
+- [x] Request logging
+
+### Next
+- [ ] Build orbital event ingestion service
+- [ ] Persist events and subscriptions
+- [ ] Add scheduled background processing
+- [ ] Add retry and timeout policies
+- [ ] Expose metrics endpoint
+
+## Engineering Focus
+
+This project is intentionally built around five core concerns:
+
+- Reliability — retries, timeouts, failure handling
+- Observability — logging, metrics, operational visibility
+- API Design — clean interfaces and service boundaries
+- Background Processing — scheduled and asynchronous work
+- Deployment — Dockerized, runnable, and portable
+
+## Tech Stack
+
+- Python
+- FastAPI
+- SQLite / Postgres (planned)
+- Docker / Docker Compose
+- External ISS pass APIs
+
+## Purpose
+
+Orbital Notify is being developed as a small but realistic backend system and portfolio case study for data/platform-oriented engineering work.
 
 ## License
 
