@@ -1,6 +1,6 @@
 # orbital-notify-py
 
-Python service for tracking ISS flyovers and sending pass notifications.
+Orbital Notify is an event-driven data pipeline that ingests ISS pass data from external APIs, validates and stores orbital events, processes visibility windows, and triggers scheduled notifications with reliability and observability built in.
 
 ## Overview
 
@@ -59,18 +59,15 @@ This system is meant to showcase the kind of backend work I enjoy:
 - Docker / Docker Compose
 - External ISS pass API
 
-## Current Status
+Data Flow
 
-Early scaffold / active development.
-
-## Development Goals
-
-This project is intentionally being built in public as a portfolio-quality backend system. The emphasis is on:
-
-- clarity
-- correctness
-- maintainability
-- practical engineering tradeoffs
+External ISS API
+→ Ingestion Service
+→ Validation / Normalization
+→ Event Store
+→ Pass Detection / Scheduling
+→ Notification Dispatch
+→ Metrics / Logs / Health Checks
 
 ## Future Ideas
 
