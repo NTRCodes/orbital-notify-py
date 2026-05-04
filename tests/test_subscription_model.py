@@ -76,3 +76,14 @@ def test_subscription_rejects_empty_location_name():
             notification_target="nigel@example.com",
             lead_time_minutes=10,
         )
+
+
+def test_subscription_strips_location_name():
+    s = Subscription(
+        location_name="  Henderson, NV  ",
+        latitude=36.0395,
+        longitude=-114.9817,
+        notification_target="nigel@example.com",
+        lead_time_minutes=10,
+    )
+    assert s.location_name == "Henderson, NV"
