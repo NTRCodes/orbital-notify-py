@@ -1,2 +1,15 @@
+[project]
+dependencies = [
+    "pydantic[email]>=2.0",
+    # ...other deps
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
 [tool.fastapi]
 entrypoint = "app.main:app"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
